@@ -1,0 +1,17 @@
+{% extends 'main/layout.html'%}
+{% block title %}Новости{% endblock %}
+{% block menu %}Новости{% endblock %}
+
+{% block content %}
+    {%if news%}
+        {%for i in news%}
+        <div class="alert alert-warning">
+            <h3>{{i.title}}</h3>
+            <p>{{i.full_text}}</p>
+            <p>{{i.date}}</p>
+        </div>
+        {%endfor%}
+    {%else%}
+        <h2>Записей нету!</h2>
+    {%endif%}
+{% endblock %}
